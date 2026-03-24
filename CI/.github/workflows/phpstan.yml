@@ -1,0 +1,26 @@
+name: "PHPStan Static Analysis"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Install composer dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse -c phpstan.neon
+        # Si PHPStan trouve des erreurs, le job échoue (exit code != 0)
