@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url(/public/font/Sofia\ Pro\ Regular\ Az.otf)
+}
+
+@font-face {
+    font-family: 'Sofia Bold';
+    src: url(/public/font/Sofia\ Pro\ Bold\ Az.otf);
+}
+
+/* -------- HEADER -------- */
+
+header {
+    margin: auto;
+    width: 95%;
+    height: 96px;
+    background-color: #fff;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+#main-nav {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+    height: 100%;
+}
+
+
+#main-nav li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: 'Sofia Pro';
+    font-size: 16px;
+    color: #121212;
+    height: 95px;
+}
+
+#main-nav li:active {
+    font-family: 'Sofia Bold';
+}
+
+#main-nav li:hover {
+    border-bottom: 4px solid #F9B943;
+    font-family: 'Sofia Bold';
+}
+
+.links {
+    height: 100%;
+}
+
+button {
+    width: 106px;
+    height: 48px;
+    border: 1px solid #232660;
+    border-radius: 50px;
+    font-family: 'Sofia Pro';
+    background-color: #fff;
+}
+
+button:hover {
+    background-color: #232660;
+    color: white;
+}
